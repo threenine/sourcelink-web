@@ -1,69 +1,74 @@
 {
-  "name": "sourcelink",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "test:e2e": "vue-cli-service test:e2e",
-    "test:unit": "vue-cli-service test:unit"
-  },
-  "dependencies": {
-    "core-js": "^2.6.5",
-    "register-service-worker": "^1.6.2",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "vuex": "^3.0.1"
-  },
-  "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.11.0",
-    "@vue/cli-plugin-e2e-nightwatch": "^3.11.0",
-    "@vue/cli-plugin-eslint": "^3.11.0",
-    "@vue/cli-plugin-pwa": "^3.11.0",
-    "@vue/cli-plugin-unit-mocha": "^3.11.0",
-    "@vue/cli-service": "^3.11.0",
-    "@vue/eslint-config-airbnb": "^4.0.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "babel-eslint": "^10.0.1",
-    "chai": "^4.1.2",
-    "eslint": "^5.16.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "node-sass": "^4.9.0",
-    "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.6.10"
-  },
-  "eslintConfig": {
-    "root": true,
-    "env": {
-      "node": true
+    "name": "sourcelink",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "preinstall": "node preinstall.js",
+        "postinstall": "node postinstall.js",
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint",
+        "test:e2e": "vue-cli-service test:e2e",
+        "test:unit": "vue-cli-service test:unit"
     },
-    "extends": [
-      "plugin:vue/essential",
-      "@vue/airbnb"
-    ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
+    "dependencies": {
+        "core-js": "^2.6.5",
+        "firebase": "^7.0.0",
+        "mdbvue": "git+https://oauth2:{MDB_VUE_PRO_ID}@git.mdbootstrap.com/mdb/vue/vu-pro.git",
+        "register-service-worker": "^1.6.2",
+        "vue": "^2.6.10",
+        "vue-router": "^3.0.3",
+        "vuefire": "^2.1.2",
+        "vuex": "^3.0.1"
     },
-    "overrides": [
-      {
-        "files": [
-          "**/__tests__/*.{j,t}s?(x)"
-        ],
+    "devDependencies": {
+        "@vue/cli-plugin-babel": "^3.11.0",
+        "@vue/cli-plugin-e2e-nightwatch": "^3.11.0",
+        "@vue/cli-plugin-eslint": "^3.11.0",
+        "@vue/cli-plugin-pwa": "^3.11.0",
+        "@vue/cli-plugin-unit-mocha": "^3.11.0",
+        "@vue/cli-service": "^3.11.0",
+        "@vue/eslint-config-airbnb": "^4.0.0",
+        "@vue/test-utils": "1.0.0-beta.29",
+        "babel-eslint": "^10.0.1",
+        "chai": "^4.1.2",
+        "eslint": "^5.16.0",
+        "eslint-plugin-vue": "^5.0.0",
+        "node-sass": "^4.9.0",
+        "sass-loader": "^7.1.0",
+        "vue-template-compiler": "^2.6.10"
+    },
+    "eslintConfig": {
+        "root": true,
         "env": {
-          "mocha": true
+            "node": true
+        },
+        "extends": [
+            "plugin:vue/essential",
+            "@vue/airbnb"
+        ],
+        "rules": {},
+        "parserOptions": {
+            "parser": "babel-eslint"
+        },
+        "overrides": [
+            {
+                "files": [
+                    "**/__tests__/*.{j,t}s?(x)"
+                ],
+                "env": {
+                    "mocha": true
+                }
+            }
+        ]
+    },
+    "postcss": {
+        "plugins": {
+            "autoprefixer": {}
         }
-      }
+    },
+    "browserslist": [
+        "> 1%",
+        "last 2 versions"
     ]
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions"
-  ]
 }

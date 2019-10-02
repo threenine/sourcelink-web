@@ -1,5 +1,5 @@
 <template>
-    $END$
+<h1>Profile</h1>
 </template>
 
 <script>
