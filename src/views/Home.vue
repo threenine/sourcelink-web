@@ -1,18 +1,21 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <mdb-container class="mt-5 p-5">
+    <mdb-row class="mt-5 p-5">
+<h1> This is the homepage</h1>
+    </mdb-row>
+  </mdb-container>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
+import { mdbContainer, mdbRow } from 'mdbvue';
 
 export default {
   name: 'home',
   components: {
-    HelloWorld,
+
+    mdbContainer,
+    mdbRow,
+
   },
 };
 </script>

@@ -1,5 +1,6 @@
 <template>
   <div class="flexible-content">
+    <Header></Header>
 
     <main>
 
@@ -11,7 +12,18 @@
 
 
 </template>
+<script>
+import Header from '@/components/Header.vue';
 
+export default {
+  name: 'App',
+  components: {
+    Header,
+
+  },
+};
+
+</script>
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
