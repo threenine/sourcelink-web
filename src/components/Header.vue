@@ -55,8 +55,8 @@ export default {
   methods: {
     logout() {
       Auth.signOut().then(() => {
-        Auth.onAuthStateChanged(() => {
-          this.$router.push('/');
+        Auth.onAuthStateChanged(async () => {
+          await this.$router.push('/');
         });
       });
     },
