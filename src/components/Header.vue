@@ -52,15 +52,6 @@ export default {
       }
     });
   },
-
-
-  computed: {
-    loggedIn() {
-      return this.$store.getters.loggedIn;
-    },
-
-
-  },
   methods: {
     logout() {
       Auth.signOut().then(() => {
