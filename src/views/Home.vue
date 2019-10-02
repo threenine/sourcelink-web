@@ -12,10 +12,8 @@ import { mdbContainer, mdbRow } from 'mdbvue';
 export default {
   name: 'home',
   components: {
-
     mdbContainer,
     mdbRow,
-
   },
 };
 </script>
