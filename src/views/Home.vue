@@ -3,9 +3,6 @@
     <mdb-row class="mt-5 p-5">
       <mdb-col> <h1> This is the homepage</h1> </mdb-col>
    </mdb-row>
-    <mdb-row class="mt-5 p-5">
-      <mdb-col> <router-link :to="{name: 'dashboard'}">Dashboard</router-link>  </mdb-col>
-    </mdb-row>
   </mdb-container>
 </template>
 

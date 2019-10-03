@@ -1,5 +1,4 @@
 import { App } from './app';
+import '@firebase/storage';
 
-
-// eslint-disable-next-line import/prefer-default-export
 export const Storage = App.storage();
