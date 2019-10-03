@@ -12,7 +12,14 @@
 
     <mdb-navbar-nav class="nav-flex-icons" right>
       <mdb-nav-item :to="{ name: 'login' }" v-if="!user" waves-fixed>Login</mdb-nav-item>
-      <mdb-nav-item @click="logout" v-else waves-fixed>Logout</mdb-nav-item>
+      <mdb-dropdown v-else tag="li" class="nav-item">
+        <mdb-dropdown-toggle tag="a" navLink slot="toggle" waves-fixed><mdb-icon icon="user-circle" /></mdb-dropdown-toggle>
+        <mdb-dropdown-menu>
+          <mdb-dropdown-item :to="{ name: 'profile'}">Profile</mdb-dropdown-item>
+          <mdb-dropdown-item @click="logout">Logout</mdb-dropdown-item>
+        </mdb-dropdown-menu>
+      </mdb-dropdown>
+
 
     </mdb-navbar-nav>
 
@@ -23,7 +30,7 @@
 
 <script>
 import {
-  mdbNavbar, mdbNavbarBrand, mdbNavbarNav, mdbNavItem,
+  mdbNavbar, mdbNavbarBrand, mdbNavbarNav, mdbNavItem, mdbDropdown, mdbDropdownItem, mdbDropdownToggle, mdbDropdownMenu, mdbIcon,
 } from 'mdbvue';
 
 import { Auth } from '@/firebase/auth';
@@ -36,6 +43,11 @@ export default {
     mdbNavbarBrand,
     mdbNavbarNav,
     mdbNavItem,
+    mdbDropdown,
+    mdbDropdownItem,
+    mdbDropdownToggle,
+    mdbDropdownMenu,
+    mdbIcon,
   },
   data() {
     return {
