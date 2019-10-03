@@ -66,7 +66,7 @@ export default {
       if (!this.errors.length) {
         event.target.classList.add('was-validated');
         Auth.signInWithEmailAndPassword(this.email, this.password)
-          .then(() => this.$router.push({ path: '/dashboard' }).catch(err => console.log(err)))
+          .then(() => this.$router.push({ path: '/dashboard' }))
           .catch(err => this.errors.push(err.message));
       }
     },
