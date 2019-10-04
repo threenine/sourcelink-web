@@ -10,6 +10,8 @@
         <mdb-side-nav-cat far icon="address-card" name="Profile">
           <mdb-side-nav-item :to="{ name: 'personal' }" icon="user-circle">Personal Information
           </mdb-side-nav-item>
+          <mdb-side-nav-item :to="{ name: 'download' }" icon="file-download" > Download
+          </mdb-side-nav-item>
          </mdb-side-nav-cat>
         <mdb-side-nav-item :collapsed="collapsed" @toggle="toggleSlim"
                            fixed icon="angle-double-left"

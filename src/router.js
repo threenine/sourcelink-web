@@ -7,6 +7,7 @@ import Dashboard from '@/views/Dashboard.vue';
 import Login from '@/views/user/Login.vue';
 import Personal from '@/views/resume/Personal.vue';
 import { Auth } from '@/firebase/auth';
+import Download from '@/views/resume/Download.vue';
 
 Vue.use(Router);
 
@@ -53,7 +54,14 @@ const router = new Router({
         requiresAuth: true,
       },
     },
-
+    {
+      path: '/resume/download',
+      name: 'download',
+      component: Download,
+      meta: {
+        requiresAuth: true,
+      },
+    },
   ],
 });
 
