@@ -1,7 +1,7 @@
 <template>
   <div class="flexible-content">
     <Header></Header>
-
+    <side-navigation></side-navigation>
     <main>
 
       <router-view></router-view>
@@ -14,11 +14,13 @@
 </template>
 <script>
 import Header from '@/components/Header.vue';
+import SideNavigation from '@/components/SideNavigation';
 
 export default {
   name: 'App',
   components: {
     Header,
+    SideNavigation
 
   },
 };
