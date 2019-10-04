@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/views/Home.vue';
 import Register from '@/views/user/Register.vue';
-import Profile from '@/views/user/Profile.vue';
+import Account from '@/views/user/Account.vue';
 import Dashboard from '@/views/Dashboard.vue';
 import Login from '@/views/user/Login.vue';
 import { Auth } from '@/firebase/auth';
@@ -37,9 +37,9 @@ const router = new Router({
       component: Register,
     },
     {
-      path: '/user/profile',
-      name: 'profile',
-      component: Profile,
+      path: '/user/account',
+      name: 'account',
+      component: Account,
       meta: {
         requiresAuth: true,
       },

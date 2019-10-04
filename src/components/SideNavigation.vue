@@ -5,11 +5,14 @@
                   :name="user.displayName"
                   fixed logoRound mask="strong" slim v-if="user">
       <mdb-side-nav-nav>
-        <mdb-side-nav-item :to="{ name: 'dashboard' }" icon="tachometer-alt">Dashboard</mdb-side-nav-item>
+        <mdb-side-nav-item :to="{ name: 'dashboard' }"
+                           icon="tachometer-alt">Dashboard</mdb-side-nav-item>
         <mdb-side-nav-cat far icon="address-card" name="Profile">
-          <mdb-side-nav-item :to="{ name: 'profile' }" icon="user-circle">Personal</mdb-side-nav-item>
+          <mdb-side-nav-item :to="{ name: 'profile' }" icon="user-circle">Personal Information
+          </mdb-side-nav-item>
          </mdb-side-nav-cat>
-        <mdb-side-nav-item :collapsed="collapsed" @toggle="toggleSlim" fixed icon="angle-double-left"
+        <mdb-side-nav-item :collapsed="collapsed" @toggle="toggleSlim"
+                           fixed icon="angle-double-left"
                            :isCollapsed="collapsed" openIcon="angle-double-right" toggler>Minimize
         </mdb-side-nav-item>
       </mdb-side-nav-nav>

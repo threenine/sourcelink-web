@@ -71,7 +71,7 @@ import { DB } from '@/firebase/db';
 import validate from '@/modules/validation-module';
 
 export default {
-  name: 'Profile',
+  name: 'Account-Settings',
   components: {
     mdbCard,
     mdbCardBody,
@@ -131,9 +131,6 @@ export default {
                       phoneNumber: this.profile.phoneNumber,
                     });
                   event.target.classList.remove('was-validated');
-                })
-                .catch((err) => {
-                  console.log(err);
                 });
             }
           });

@@ -15,8 +15,8 @@
       <mdb-dropdown v-else tag="li" class="nav-item">
         <mdb-dropdown-toggle tag="a" navLink slot="toggle" waves-fixed><mdb-icon icon="user-circle" /></mdb-dropdown-toggle>
         <mdb-dropdown-menu>
-          <mdb-dropdown-item :to="{ name: 'profile'}">Profile</mdb-dropdown-item>
-          <mdb-dropdown-item @click="logout">Logout</mdb-dropdown-item>
+          <mdb-dropdown-item :to="{ name: 'account'}"><mdb-icon icon="user-cog" /> Account Settings</mdb-dropdown-item>
+          <mdb-dropdown-item @click="logout"><mdb-icon icon="sign-out-alt" /> Logout</mdb-dropdown-item>
         </mdb-dropdown-menu>
       </mdb-dropdown>
 
