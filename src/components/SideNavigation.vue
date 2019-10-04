@@ -8,7 +8,7 @@
         <mdb-side-nav-item :to="{ name: 'dashboard' }"
                            icon="tachometer-alt">Dashboard</mdb-side-nav-item>
         <mdb-side-nav-cat far icon="address-card" name="Profile">
-          <mdb-side-nav-item :to="{ name: 'profile' }" icon="user-circle">Personal Information
+          <mdb-side-nav-item :to="{ name: 'personal' }" icon="user-circle">Personal Information
           </mdb-side-nav-item>
          </mdb-side-nav-cat>
         <mdb-side-nav-item :collapsed="collapsed" @toggle="toggleSlim"

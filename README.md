@@ -16,6 +16,7 @@
  * [How to implement Navigation Guards Vue](https://garywoodfine.com/how-to-implement-navigation-guards-vue/)
  * [How to Use Firebase Cloud Functions](https://garywoodfine.com/how-to-use-firebase-cloud-functions/)
  * [How to split Vuex Store into modules](https://garywoodfine.com/how-to-split-vuex-store-into-modules/)
+ * [How to update Firebase Authentication Profile](https://garywoodfine.com/how-to-update-firebase-authentication-profile/)
 
 The concept behind  [SourceLink](https://sourcelink.co.uk) is to become a developer only focused 
 Community and Job Board, for developers and developed by developers.
@@ -23,7 +24,7 @@ Community and Job Board, for developers and developed by developers.
 ## Project setup
 Before running NPM Install ensure you create a .env file and provide the MDB Vue PRo ID
 
-There are two additional preisntall and postinstall tasks to handle inserting and removing 
+There are two additional `preisntall` and `postinstall` tasks to handle inserting and removing 
 of the ID during install.
 
 example of .env file should look like
