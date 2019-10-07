@@ -10,12 +10,11 @@ const createProfile = (userRecord, context) => {
 
   const {email, uid} = userRecord;
 
-  return db
+ return db
     .collection('users')
     .doc(uid)
     .set({email})
     .catch(console.error);
-
 };
 
 module.exports = {

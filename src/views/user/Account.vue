@@ -111,7 +111,7 @@ export default {
         this.errors.push('A lastname is required');
       }
 
-      if (!validate.email(this.email)) {
+      if (!validate.email(this.profile.email)) {
         this.errors.push('Please enter a valid email address');
       }
 
