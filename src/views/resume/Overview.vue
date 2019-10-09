@@ -53,10 +53,10 @@ import {
   mdbBtn,
 }
   from 'mdbvue';
+
 import { Auth } from '@/firebase/auth';
-import { Storage } from '@/firebase/storage';
 import { DB } from '@/firebase/db';
-import validate from '@/modules/validation-module';
+
 
 export default {
   name: 'personal',
