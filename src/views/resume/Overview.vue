@@ -16,7 +16,7 @@
           </mdb-row>
           <mdb-row>
             <mdb-col class="col-8">
-              <mdb-input :rows="10"
+              <mdb-input :rows="20"
                          type="textarea"
                          label="Summary"
                          v-model="profile.summary"></mdb-input>

@@ -7,7 +7,7 @@ import router from './router';
 import store from './store';
 
 import './registerServiceWorker';
-
+import { apolloProvider } from './graphql/apollo';
 
 Vue.config.productionTip = false;
 Vue.use(firestorePlugin);
@@ -15,5 +15,6 @@ Vue.use(firestorePlugin);
 new Vue({
   router,
   store,
+  apolloProvider,
   render: h => h(App),
 }).$mount('#app');
