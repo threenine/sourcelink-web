@@ -1,42 +1,53 @@
 <template>
   <mdb-container class="mt-5 p-5">
-    <mdb-row  class="mt-3 p-3">
-      <mdb-col>
-      <mdb-card>
+    <mdb-card class="mt-3 p-3">
 
-        <mdb-card-body>
-          <mdb-card-title class=""><h3>Overview</h3></mdb-card-title>
-          <form @submit.prevent="savePersonal" novalidate>
-          <mdb-row>
-            <mdb-col class="col-5">
-              <mdb-input type="text" label="Job Title" v-model="profile.tagline"></mdb-input>
-            </mdb-col>
-            <mdb-col class="col-6">
-            </mdb-col>
-          </mdb-row>
-          <mdb-row>
-            <mdb-col class="col-8">
-              <mdb-input :rows="20"
-                         type="textarea"
-                         label="Summary"
-                         v-model="profile.summary"></mdb-input>
-            </mdb-col>
-            <mdb-col class="col-4">
-            </mdb-col>
-          </mdb-row>
-          <mdb-row>
-            <mdb-col class="col-8">
-             </mdb-col>
-            <mdb-col class="col-4">
-              <mdb-btn >Next <mdb-icon icon="angle-double-right" /></mdb-btn>
-            </mdb-col>
-          </mdb-row>
-          </form>
-        </mdb-card-body>
-      </mdb-card>
-      </mdb-col>
-
-    </mdb-row>
+      <mdb-card-body>
+        <mdb-card-title class=""><h3>Overview</h3></mdb-card-title>
+        <mdb-row>
+          <mdb-col class="col-10">
+            <form @submit.prevent="savePersonal" novalidate>
+              <mdb-row>
+                <mdb-col class="col-10">
+                  <mdb-input type="text" label="Job Title" v-model="profile.tagline"></mdb-input>
+                </mdb-col>
+                <mdb-col class="col-2">
+                </mdb-col>
+              </mdb-row>
+              <mdb-row>
+                <mdb-col class="col-10">
+                  <mdb-input :rows="20"
+                             type="textarea"
+                             label="Summary"
+                             v-model="profile.summary"></mdb-input>
+                </mdb-col>
+                <mdb-col class="col-2">
+                </mdb-col>
+              </mdb-row>
+              <mdb-row>
+                <mdb-col class="col-8">
+                </mdb-col>
+                <mdb-col class="col-4">
+                  <mdb-btn>Next
+                    <mdb-icon icon="angle-double-right"/>
+                  </mdb-btn>
+                </mdb-col>
+              </mdb-row>
+            </form>
+          </mdb-col>
+          <mdb-col class="col-2">
+            <mdb-popover trigger="click" :options="{ placement: 'right'} ">
+              <span slot="header">Profile Overview</span>
+              <span slot="body">Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                Pellentesque ornare sem lacinia quam venenatis vestibulum.</span>
+              <mdb-btn slot="reference">
+                <mdb-icon icon="info-circle" />
+              </mdb-btn>
+            </mdb-popover>
+          </mdb-col>
+        </mdb-row>
+      </mdb-card-body>
+    </mdb-card>
   </mdb-container>
 </template>
 
@@ -51,6 +62,7 @@ import {
   mdbIcon,
   mdbInput,
   mdbBtn,
+  mdbPopover,
 }
   from 'mdbvue';
 
@@ -70,6 +82,7 @@ export default {
     mdbIcon,
     mdbInput,
     mdbBtn,
+    mdbPopover,
   },
   data() {
     return {
