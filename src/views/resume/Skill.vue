@@ -16,7 +16,7 @@
 
               </mdb-col>
               <mdb-col>
-               <mdb-btn @click="addLanguage">
+               <mdb-btn @click="addLanguage" floating  gradient="green" tag="a">
                  <mdb-icon icon="plus"></mdb-icon>
                </mdb-btn>
               </mdb-col>

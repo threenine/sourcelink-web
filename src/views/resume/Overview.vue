@@ -3,8 +3,7 @@
     <mdb-card class="mt-3 p-3">
 
       <mdb-card-body>
-        <mdb-card-title class=""><h3>Overview</h3></mdb-card-title>
-        <mdb-row>
+               <mdb-row>
           <mdb-col class="col-10">
             <form @submit.prevent="savePersonal" novalidate>
               <mdb-row>
@@ -36,14 +35,31 @@
             </form>
           </mdb-col>
           <mdb-col class="col-2">
-            <mdb-popover trigger="click" :options="{ placement: 'right'} ">
-              <span slot="header">Profile Overview</span>
-              <span slot="body">Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+            <mdb-row>
+              <mdb-col>
+                <mdb-popover trigger="click" :options="{ placement: 'right'}">
+                  <span slot="header">Profile Overview</span>
+                  <span slot="body">Sed posuere consectetur est at lobortis. Aenean eu leo quam.
                 Pellentesque ornare sem lacinia quam venenatis vestibulum.</span>
-              <mdb-btn slot="reference">
-                <mdb-icon icon="info-circle" />
-              </mdb-btn>
-            </mdb-popover>
+                  <mdb-btn slot="reference" tag="a" gradient="blue" floating size="sm">
+                    <mdb-icon icon="info-circle" />
+                  </mdb-btn>
+                </mdb-popover>
+              </mdb-col>
+            </mdb-row>
+            <mdb-row class="mt-3">
+              <mdb-col>
+                <mdb-popover trigger="click" :options="{ placement: 'right'}">
+                  <span slot="header">Profile Overview</span>
+                  <span slot="body">Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                Pellentesque ornare sem lacinia quam venenatis vestibulum.</span>
+                  <mdb-btn slot="reference" tag="a" gradient="blue" floating size="sm">
+                    <mdb-icon icon="info-circle" />
+                  </mdb-btn>
+                </mdb-popover>
+              </mdb-col>
+            </mdb-row>
+
           </mdb-col>
         </mdb-row>
       </mdb-card-body>
