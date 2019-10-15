@@ -8,7 +8,7 @@
             <form @submit.prevent="savePersonal" novalidate>
               <mdb-row>
                 <mdb-col class="col-10">
-                  <mdb-input type="text" label="Job Title" v-model="profile.tagline"></mdb-input>
+                  <mdb-input type="text" label="Tag line" v-model="profile.tagline"></mdb-input>
                 </mdb-col>
                 <mdb-col class="col-2">
                 </mdb-col>
@@ -38,9 +38,11 @@
             <mdb-row>
               <mdb-col>
                 <mdb-popover trigger="click" :options="{ placement: 'right'}">
-                  <span slot="header">Profile Overview</span>
-                  <span slot="body">Sed posuere consectetur est at lobortis. Aenean eu leo quam.
-                Pellentesque ornare sem lacinia quam venenatis vestibulum.</span>
+                  <span slot="header">Tag Line</span>
+                  <span slot="body"><p>Try to define your <em>Value Proposition</em>
+                    succinctly as possible.</p>
+                  <p>This should be the over-arching offering: The key thing that you consistently
+                  walk into an organisation and do!</p></span>
                   <mdb-btn slot="reference" tag="a" gradient="blue" floating size="sm">
                     <mdb-icon icon="info-circle" />
                   </mdb-btn>
@@ -50,9 +52,12 @@
             <mdb-row class="mt-3">
               <mdb-col>
                 <mdb-popover trigger="click" :options="{ placement: 'right'}">
-                  <span slot="header">Profile Overview</span>
-                  <span slot="body">Sed posuere consectetur est at lobortis. Aenean eu leo quam.
-                Pellentesque ornare sem lacinia quam venenatis vestibulum.</span>
+                  <span slot="header">Summary</span>
+                  <span slot="body"><p>Your summary should include 3 key components: </p>
+                    <ul><li><strong>What are you?</strong></li>
+                      <li><strong>What is your <em>Value Proposition</em></strong></li>
+                      <li><strong>What are your top four key strengths</strong></li></ul>
+                  </span>
                   <mdb-btn slot="reference" tag="a" gradient="blue" floating size="sm">
                     <mdb-icon icon="info-circle" />
                   </mdb-btn>
