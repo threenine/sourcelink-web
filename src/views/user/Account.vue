@@ -38,6 +38,11 @@
                   <mdb-input label="Phone Number" type="text" v-model="profile.phoneNumber" />
                 </mdb-col>
               </mdb-row>
+              <mdb-row>
+                <mdb-col sm="12">
+                  <mdb-input label="Website" type="text" v-model="profile.website" />
+                </mdb-col>
+              </mdb-row>
             </mdb-container>
             <div class="text-right">
               <mdb-btn size="sm" type="submit">Save</mdb-btn>
