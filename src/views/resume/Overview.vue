@@ -12,7 +12,7 @@
                     succinctly as possible.</p>
                   <p>This should be the over-arching offering: The key thing that you consistently
                   walk into an organisation and do!</p></span>
-                    <mdb-btn slot="reference" tag="a" gradient="blue" floating size="sm">
+                    <mdb-btn slot="reference" tag="a" gradient="aqua" floating size="sm">
                       <mdb-icon icon="info-circle"/>
                     </mdb-btn>
                   </mdb-popover>
@@ -34,7 +34,7 @@
                       <li><strong>What is your <em>Value Proposition</em></strong></li>
                       <li><strong>What are your top four key strengths</strong></li></ul>
                   </span>
-                    <mdb-btn slot="reference" tag="a" gradient="blue" floating size="sm">
+                    <mdb-btn slot="reference" tag="a" gradient="aqua" floating size="sm">
                       <mdb-icon icon="info-circle"/>
                     </mdb-btn>
                   </mdb-popover>
@@ -42,7 +42,7 @@
 
               </mdb-row>
               <mdb-row>
-                <mdb-col class="col-12 float-right" >
+                <mdb-col class="col-8 float-right" >
                   <mdb-btn >Next
                     <mdb-icon icon="angle-double-right"/>
                   </mdb-btn>
@@ -66,7 +66,6 @@ import {
 
 import { Auth } from '@/firebase/auth';
 import { DB } from '@/firebase/db';
-
 
 export default {
   name: 'personal',
