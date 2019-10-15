@@ -21,8 +21,7 @@
                          label="Summary"
                          v-model="profile.summary"></mdb-input>
             </mdb-col>
-            <mdb-col class="col-4">
-            </mdb-col>
+
           </mdb-row>
           <mdb-row>
             <mdb-col class="col-8">
@@ -35,7 +34,14 @@
         </mdb-card-body>
       </mdb-card>
       </mdb-col>
-
+      <mdb-col class="col-4">
+        <mdb-popover trigger="click" :options="{placement: 'right'}">
+          <span slot="header">popover on right</span>
+          <span slot="body">Sed posuere consectetur est at lobortis. Aenean eu leo quam.
+                  Pellentesque ornare sem lacinia quam venenatis vestibulum.</span>
+          <mdb-btn slot="reference" @click.prevent> <mdb-icon icon="info"></mdb-icon></mdb-btn>
+        </mdb-popover>
+      </mdb-col>
     </mdb-row>
   </mdb-container>
 </template>
@@ -51,6 +57,7 @@ import {
   mdbIcon,
   mdbInput,
   mdbBtn,
+  mdbPopover,
 }
   from 'mdbvue';
 
@@ -70,6 +77,7 @@ export default {
     mdbIcon,
     mdbInput,
     mdbBtn,
+    mdbPopover,
   },
   data() {
     return {

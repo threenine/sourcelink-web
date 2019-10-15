@@ -17,7 +17,8 @@
  * [How to Use Firebase Cloud Functions](https://garywoodfine.com/how-to-use-firebase-cloud-functions/)
  * [How to split Vuex Store into modules](https://garywoodfine.com/how-to-split-vuex-store-into-modules/)
  * [How to update Firebase Authentication Profile](https://garywoodfine.com/how-to-update-firebase-authentication-profile/)
-
+ * [Calling GraphQL API with Vue.JS](https://garywoodfine.com/calling-graphql-api-with-vue-js/)
+ 
 The concept behind  [SourceLink](https://sourcelink.co.uk) is to become a developer only focused 
 Community and Job Board, for developers and developed by developers.
 
