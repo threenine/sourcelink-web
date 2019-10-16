@@ -29,6 +29,7 @@
                                        v-bind:key="language">{{ language }}
                   </mdb-list-group-item>
                 </mdb-list-group>
+                <mdb-btn @click="saveLanguages">Save</mdb-btn>
               </mdb-col>
             </mdb-row>
 
@@ -59,6 +60,8 @@ import {
   from 'mdbvue';
 
 import { GET_LANGUAGES_QUERY } from '../../graphql/queries/skillQueries';
+import { Auth } from '@/firebase/auth';
+import { DB } from '@/firebase/db';
 
 export default {
   name: 'Skill',
@@ -104,6 +107,15 @@ export default {
       if (language) {
         return language.value;
       }
+    },
+    saveLanguages() {
+      DB.collection('users')
+        .doc(Auth.currentUser.uid)
+        .onSnapshot((doc) => {
+          if (doc.exists) {
+            doc.ref.update(this.selectedLanguages);
+          }
+        });
     },
   },
 

@@ -10,7 +10,7 @@
                     <span slot="header" class="info-popover">Tag Line</span>
                     <span slot="body"><p>Try to define your <em>Value Proposition</em>
                     succinctly as possible.</p>
-                  <p>This should be the over-arching offering: The key thing that you consistently
+                  <p>The key thing that you consistently
                   walk into an organisation and do!</p></span>
                     <mdb-btn slot="reference" tag="a" gradient="aqua" floating size="sm">
                       <mdb-icon icon="info-circle"/>
@@ -43,7 +43,7 @@
               </mdb-row>
               <mdb-row>
                 <mdb-col class="col-8 float-right" >
-                  <mdb-btn >Next
+                  <mdb-btn size="sm" >Next
                     <mdb-icon icon="angle-double-right"/>
                   </mdb-btn>
                 </mdb-col>
