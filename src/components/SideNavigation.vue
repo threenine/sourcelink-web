@@ -12,6 +12,8 @@
           </mdb-side-nav-item>
           <mdb-side-nav-item :to="{ name: 'skill' }" icon="clipboard-list">Skills
           </mdb-side-nav-item>
+          <mdb-side-nav-item :to="{ name: 'location' }" icon="clipboard-list">Location
+          </mdb-side-nav-item>
           <mdb-side-nav-item :to="{ name: 'download' }" icon="file-download" > Download
           </mdb-side-nav-item>
          </mdb-side-nav-cat>
