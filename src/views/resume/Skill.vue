@@ -1,15 +1,8 @@
 <template>
   <mdb-container class="mt-5 p-5">
-    <h1>Skills</h1>
-    <mdb-row class="mt-3 p-3">
-      <mdb-col>
-        <mdb-card>
-
-          <mdb-card-body>
-            <mdb-card-title class="section-title">Programming Languages</mdb-card-title>
-            <mdb-row>
+                <mdb-row>
               <mdb-col>
-                <mdb-select search v-model="languages"
+                <mdb-select search v-model="profile.languages"
                             id="language"
                             label="Language"
                             @getvalue="selectedLanguage"/>
@@ -25,25 +18,16 @@
             <mdb-row>
               <mdb-col>
                 <mdb-chip v-for="language in selectedLanguages"
-                          v-bind:key="language" > {{ language }}</mdb-chip>
-
-
+                          v-bind:key="language"
+                          color="green lighten-2" text="white" close :handle-close="removeSkill"
+                > {{ language }}</mdb-chip>
               </mdb-col>
             </mdb-row>
             <mdb-row>
               <mdb-col>
-
-
                 <mdb-btn @click="saveLanguages" size="sm">Save</mdb-btn>
               </mdb-col>
             </mdb-row>
-
-          </mdb-card-body>
-        </mdb-card>
-      </mdb-col>
-      <mdb-col></mdb-col>
-
-    </mdb-row>
   </mdb-container>
 </template>
 
@@ -52,9 +36,6 @@ import {
   mdbContainer,
   mdbRow,
   mdbCol,
-  mdbCard,
-  mdbCardTitle,
-  mdbCardBody,
   mdbIcon,
   mdbBtn,
   mdbSelect,
@@ -72,9 +53,6 @@ export default {
     mdbContainer,
     mdbRow,
     mdbCol,
-    mdbCard,
-    mdbCardTitle,
-    mdbCardBody,
     mdbIcon,
     mdbBtn,
     mdbSelect,
@@ -102,6 +80,13 @@ export default {
       if (selected !== undefined && !this.selectedLanguages.includes(selected)) {
         this.selectedLanguages.push(selected);
         this.selectedLanguages.sort();
+        DB.collection('users')
+          .doc(Auth.currentUser.uid)
+          .onSnapshot((doc) => {
+            if (doc.exists) {
+              doc.ref.update(this.selectedLanguages);
+            }
+          });
       }
     },
     // eslint-disable-next-line consistent-return
@@ -120,6 +105,9 @@ export default {
           }
         });
     },
+    removeSkill() {
+      alert('Removed Skill');
+    },
   },
 
 
@@ -128,12 +116,4 @@ export default {
 
 <style scoped>
 
-  .section-title {
-    font-weight: bold;
-    font-size: medium;
-  }
-
-  .wide-box {
-    width: 100%;
-  }
 </style>
