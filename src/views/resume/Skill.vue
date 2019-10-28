@@ -2,7 +2,7 @@
   <mdb-container class="mt-5 p-5">
                 <mdb-row>
               <mdb-col>
-                <mdb-select search v-model="profile.languages"
+                <mdb-select search v-model="languages"
                             id="language"
                             label="Language"
                             @getvalue="selectedLanguage"/>
