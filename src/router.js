@@ -10,7 +10,6 @@ import { Auth } from '@/firebase/auth';
 import Download from '@/views/resume/Download.vue';
 import Skill from '@/views/resume/Skill.vue';
 import Education from '@/views/resume/Education.vue';
-import Location from '@/views/resume/Location.vue';
 import Project from '@/views/resume/Project.vue';
 
 
@@ -71,14 +70,6 @@ const router = new Router({
       path: '/resume/education',
       name: 'education',
       component: Education,
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    {
-      path: '/resume/location',
-      name: 'location',
-      component: Location,
       meta: {
         requiresAuth: true,
       },

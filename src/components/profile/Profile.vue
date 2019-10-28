@@ -2,7 +2,7 @@
   <mdb-container class="mt-5 p-5">
     <mdb-row>
     <mdb-col class="col-7">
-      <mdb-input type="text" label="Tag line" v-model="profile.tagLine"></mdb-input>
+      <mdb-input type="text" label="Tag line" v-model="profile.tagline"></mdb-input>
     </mdb-col>
     <mdb-col class="col-5">
       <mdb-popover trigger="hover" :options="{ placement: 'right'}">

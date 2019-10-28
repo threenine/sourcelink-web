@@ -16,7 +16,7 @@
 
               </mdb-col>
               <mdb-col>
-               <mdb-btn @click="addLanguage" floating  gradient="green" tag="a">
+               <mdb-btn @click="addLanguage" floating  gradient="green" tag="a" size="sm">
                  <mdb-icon icon="plus"></mdb-icon>
                </mdb-btn>
               </mdb-col>
@@ -24,12 +24,17 @@
             </mdb-row>
             <mdb-row>
               <mdb-col>
-                <mdb-list-group>
-                  <mdb-list-group-item v-for="language in selectedLanguages"
-                                       v-bind:key="language">{{ language }}
-                  </mdb-list-group-item>
-                </mdb-list-group>
-                <mdb-btn @click="saveLanguages">Save</mdb-btn>
+                <mdb-chip v-for="language in selectedLanguages"
+                          v-bind:key="language" > {{ language }}</mdb-chip>
+
+
+              </mdb-col>
+            </mdb-row>
+            <mdb-row>
+              <mdb-col>
+
+
+                <mdb-btn @click="saveLanguages" size="sm">Save</mdb-btn>
               </mdb-col>
             </mdb-row>
 
@@ -53,9 +58,7 @@ import {
   mdbIcon,
   mdbBtn,
   mdbSelect,
-  mdbListGroup,
-  mdbListGroupItem,
-
+  mdbChip,
 }
   from 'mdbvue';
 
@@ -75,8 +78,7 @@ export default {
     mdbIcon,
     mdbBtn,
     mdbSelect,
-    mdbListGroup,
-    mdbListGroupItem,
+    mdbChip,
   },
   data() {
     return {
@@ -102,6 +104,7 @@ export default {
         this.selectedLanguages.sort();
       }
     },
+    // eslint-disable-next-line consistent-return
     selectedLanguage() {
       const language = this.languages.find(option => option.selected === true);
       if (language) {
