@@ -1,14 +1,17 @@
 <template>
   <mdb-container>
-    <section class="my-5">
+    <section class="mt-5">
       <mdb-row>
-        <mdb-col md="8" xl="10" class="mb-4">
+        <mdb-col md="6" xl="8" class="mt-4">
           <profile :profile="profile"></profile>
+        </mdb-col>
+        <mdb-col  md="6" xl="4" class="mt-5">
+          <language :profile="profile"></language>
         </mdb-col>
       </mdb-row>
 
       <mdb-row>
-        <mdb-col class="col-8 float-right">
+        <mdb-col md="12" xl="12" class="float-right">
           <mdb-btn @click="savePersonal" size="sm">Next
             <mdb-icon icon="angle-double-right"/>
           </mdb-btn>
@@ -29,6 +32,7 @@ import {
 }
   from 'mdbvue';
 import Profile from '@/components/profile/Profile.vue';
+import Language from '@/components/profile/Language.vue';
 import { Auth } from '@/firebase/auth';
 import { DB } from '@/firebase/db';
 
@@ -36,6 +40,7 @@ export default {
   name: 'personal',
   components: {
     Profile,
+    Language,
     mdbContainer,
     mdbRow,
     mdbCol,

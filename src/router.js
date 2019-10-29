@@ -8,7 +8,6 @@ import Login from '@/views/user/Login.vue';
 import Overview from '@/views/resume/Overview.vue';
 import { Auth } from '@/firebase/auth';
 import Download from '@/views/resume/Download.vue';
-import Skill from '@/views/resume/Skill.vue';
 import Education from '@/views/resume/Education.vue';
 import Project from '@/views/resume/Project.vue';
 
@@ -54,14 +53,6 @@ const router = new Router({
       path: '/resume/overview',
       name: 'overview',
       component: Overview,
-      meta: {
-        requiresAuth: true,
-      },
-    },
-    {
-      path: '/resume/skill',
-      name: 'skill',
-      component: Skill,
       meta: {
         requiresAuth: true,
       },

@@ -1,11 +1,11 @@
 <template>
-  <mdb-container class="mt-5 p-5">
+  <mdb-container class="mt-5">
     <mdb-row>
-    <mdb-col class="col-7">
+    <mdb-col md="8" xl="8">
       <mdb-input type="text" label="Tag line" v-model="profile.tagline"></mdb-input>
     </mdb-col>
-    <mdb-col class="col-5">
-      <mdb-popover trigger="hover" :options="{ placement: 'right'}">
+    <mdb-col >
+      <mdb-popover trigger="hover" :options="{ placement: 'left'}">
         <span slot="header" class="info-popover">Tag Line</span>
         <span slot="body"><p>Try to define your <em>Value Proposition</em>
                     succinctly as possible.</p>
@@ -19,14 +19,14 @@
     </mdb-col>
     </mdb-row>
     <mdb-row>
-      <mdb-col class="col-7">
+      <mdb-col md="8" xl="8">
         <mdb-input :rows="20"
                    type="textarea"
                    label="Summary"
                    v-model="profile.summary"></mdb-input>
       </mdb-col>
-      <mdb-col class="col-5 bottom">
-        <mdb-popover trigger="hover" :options="{ placement: 'right'}">
+      <mdb-col >
+        <mdb-popover trigger="hover" :options="{ placement: 'left'}">
           <span slot="header">Summary</span>
           <span slot="body"><p>Your summary should include 3 key components: </p>
                     <ul>

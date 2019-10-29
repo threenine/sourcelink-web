@@ -1,28 +1,29 @@
 <template>
-  <mdb-container class="mt-5 p-5">
+  <mdb-container>
+    <section>
     <mdb-row>
-      <mdb-col>
+      <mdb-col md="8" xl="10">
         <mdb-select search v-model="languages"
                     id="language"
-                    label="Language"
+                    label="Languages"
                     @getvalue="selectedLanguage"/>
-
       </mdb-col>
-      <mdb-col>
-        <mdb-btn @click="addLanguage" floating  gradient="green" tag="a" size="sm">
+      <mdb-col md="4" xl="1" >
+        <mdb-btn @click="addLanguage" floating  gradient="green" tag="a" size="sm" >
           <mdb-icon icon="plus"></mdb-icon>
         </mdb-btn>
-      </mdb-col>
 
+      </mdb-col>
     </mdb-row>
     <mdb-row>
-      <mdb-col>
+      <mdb-col md="12" xl="12">
         <mdb-chip v-for="language in profile.languages"
                   v-bind:key="language"
                   color="green lighten-2" text="white" close :handle-close="removeSkill"
         > {{ language }}</mdb-chip>
       </mdb-col>
     </mdb-row>
+    </section>
   </mdb-container>
 </template>
 
@@ -76,6 +77,17 @@ export default {
     selectedLanguage() {
       return this.languages.find(option => option.selected === true).value;
     },
+    addLanguage() {
+      const selected = this.selectedLanguage();
+
+      if (selected !== undefined && !this.profile.languages.includes(selected)) {
+        this.profile.languages.push(selected);
+        this.profile.languages.sort();
+      }
+    },
+  },
+  removesSkill() {
+    alert('Fuck');
   },
 };
 </script>
