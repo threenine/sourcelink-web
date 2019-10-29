@@ -74,8 +74,7 @@ export default {
     mdbInput,
     mdbBtn,
     mdbPopover,
-  }
-  ,
+  },
 };
 </script>
 

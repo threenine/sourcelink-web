@@ -89,12 +89,15 @@ export default {
           });
       }
     },
-    // eslint-disable-next-line consistent-return
+
     selectedLanguage() {
+      return this.languages.find(option => option.selected === true).value;
+      /*
       const language = this.languages.find(option => option.selected === true);
       if (language) {
         return language.value;
       }
+      */
     },
     saveLanguages() {
       DB.collection('users')
