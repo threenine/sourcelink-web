@@ -1,81 +1,84 @@
 {
-    "name": "sourcelink",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "preinstall": "node preinstall.js",
-        "postinstall": "node postinstall.js",
-        "serve": "vue-cli-service serve",
-        "build": "vue-cli-service build",
-        "lint": "vue-cli-service lint",
-        "test:e2e": "vue-cli-service test:e2e",
-        "test:unit": "vue-cli-service test:unit"
+  "name": "sourcelink",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "preinstall": "node preinstall.js",
+    "postinstall": "node postinstall.js",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "start": "vue-cli-service serve --open",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "dependencies": {
+    "apollo-cache-inmemory": "^1.6.3",
+    "apollo-client": "^2.6.4",
+    "apollo-link-error": "^1.1.12",
+    "apollo-link-http": "^1.5.16",
+    "bootstrap-css-only": "^4.3.1",
+    "core-js": "^2.6.10",
+    "firebase": "^7.2.2",
+    "graphql": "^14.5.8",
+    "graphql-tag": "^2.10.1",
+    "mdbvue": "git+https://oauth2:{MDB_VUE_PRO_ID}@git.mdbootstrap.com/mdb/vue/vu-pro.git",
+    "register-service-worker": "^1.6.2",
+    "vue": "^2.6.10",
+    "vue-apollo": "^3.0.0",
+    "vue-router": "^3.0.3",
+    "vuefire": "^2.2.0",
+    "vuex": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.12.1",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.12.1",
+    "@vue/cli-plugin-eslint": "^3.12.1",
+    "@vue/cli-plugin-pwa": "^3.12.1",
+    "@vue/cli-plugin-unit-mocha": "^3.12.1",
+    "@vue/cli-service": "^3.12.1",
+    "@vue/eslint-config-airbnb": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.1.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^7.1.0",
+    "vue-cli-plugin-mdb": "^2.0.1",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
     },
-    "dependencies": {
-        "apollo-cache-inmemory": "^1.6.3",
-        "apollo-client": "^2.6.4",
-        "apollo-link-error": "^1.1.12",
-        "apollo-link-http": "^1.5.16",
-        "core-js": "^2.6.5",
-        "firebase": "^7.2.0",
-        "graphql": "^14.5.8",
-        "graphql-tag": "^2.10.1",
-        "mdbvue": "git+https://oauth2:{MDB_VUE_PRO_ID}@git.mdbootstrap.com/mdb/vue/vu-pro.git",
-        "register-service-worker": "^1.6.2",
-        "vue": "^2.6.10",
-        "vue-apollo": "^3.0.0-rc.7",
-        "vue-router": "^3.0.3",
-        "vuefire": "^2.2.0",
-        "vuex": "^3.0.1"
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/airbnb"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
     },
-    "devDependencies": {
-        "@vue/cli-plugin-babel": "^3.12.0",
-        "@vue/cli-plugin-e2e-nightwatch": "^3.12.0",
-        "@vue/cli-plugin-eslint": "^3.12.0",
-        "@vue/cli-plugin-pwa": "^3.12.0",
-        "@vue/cli-plugin-unit-mocha": "^3.12.0",
-        "@vue/cli-service": "^3.12.0",
-        "@vue/eslint-config-airbnb": "^4.0.0",
-        "@vue/test-utils": "1.0.0-beta.29",
-        "babel-eslint": "^10.0.1",
-        "chai": "^4.1.2",
-        "eslint": "^5.16.0",
-        "eslint-plugin-vue": "^5.0.0",
-        "node-sass": "^4.9.0",
-        "sass-loader": "^7.1.0",
-        "vue-template-compiler": "^2.6.10"
-    },
-    "eslintConfig": {
-        "root": true,
-        "env": {
-            "node": true
-        },
-        "extends": [
-            "plugin:vue/essential",
-            "@vue/airbnb"
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)"
         ],
-        "rules": {},
-        "parserOptions": {
-            "parser": "babel-eslint"
-        },
-        "overrides": [
-            {
-                "files": [
-                    "**/__tests__/*.{j,t}s?(x)"
-                ],
-                "env": {
-                    "mocha": true
-                }
-            }
-        ]
-    },
-    "postcss": {
-        "plugins": {
-            "autoprefixer": {}
+        "env": {
+          "mocha": true
         }
-    },
-    "browserslist": [
-        "> 1%",
-        "last 2 versions"
+      }
     ]
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
