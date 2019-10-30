@@ -6,7 +6,7 @@
           <profile :profile="profile"></profile>
         </mdb-col>
         <mdb-col  md="6" xl="4" class="mt-5">
-          <language :profile="profile"></language>
+          <language :profile="profile" @add="addLanguage" @remove="removeLanguage"></language>
         </mdb-col>
       </mdb-row>
 
@@ -50,7 +50,7 @@ export default {
   },
   data() {
     return {
-      profile: '',
+      profile: {},
       errors: [],
     };
   },
@@ -67,6 +67,15 @@ export default {
     savePersonal(event) {
       event.target.classList.add('was-validated');
 
+      this.saveProfile();
+
+      this.$router.push({ name: 'download' });
+    },
+    addLanguage() {
+      this.saveProfile();
+    },
+    removeLanguage() {
+      console.dir(this.profile);
       DB.collection('users')
         .doc(Auth.currentUser.uid)
         .onSnapshot((doc) => {
@@ -74,8 +83,16 @@ export default {
             doc.ref.update(this.profile);
           }
         });
-
-      this.$router.push({ name: 'skill' });
+      console.log('removed');
+    },
+    saveProfile() {
+      DB.collection('users')
+        .doc(Auth.currentUser.uid)
+        .onSnapshot((doc) => {
+          if (doc.exists) {
+            doc.ref.update(this.profile);
+          }
+        });
     },
   },
 

@@ -6,10 +6,10 @@
         <mdb-select search v-model="languages"
                     id="language"
                     label="Languages"
-                    @getvalue="selectedLanguage"/>
+                    v-on:getValue="selectedLanguage"/>
       </mdb-col>
       <mdb-col md="4" xl="1" >
-        <mdb-btn @click="addLanguage" floating  gradient="green" tag="a" size="sm" >
+        <mdb-btn @click="add" floating  gradient="green" tag="a" size="sm" >
           <mdb-icon icon="plus"></mdb-icon>
         </mdb-btn>
 
@@ -19,8 +19,8 @@
       <mdb-col md="12" xl="12">
         <mdb-chip v-for="language in profile.languages"
                   v-bind:key="language"
-                  color="green lighten-2" text="white" close :handle-close="removeSkill"
-        > {{ language }}</mdb-chip>
+                  color="green lighten-2" text="white" close :handle-close="remove"
+        >{{ language }}</mdb-chip>
       </mdb-col>
     </mdb-row>
     </section>
@@ -61,7 +61,6 @@ export default {
   data() {
     return {
       languages: [],
-      selectedLanguages: [],
     };
   },
   async mounted() {
@@ -71,24 +70,28 @@ export default {
           this.languages.push({ text: language.name, value: language.name });
         });
       });
+
+
     this.languages.sort();
   },
   methods: {
-    selectedLanguage() {
-      return this.languages.find(option => option.selected === true).value;
-    },
-    addLanguage() {
-      const selected = this.selectedLanguage();
-
-      if (selected !== undefined && !this.profile.languages.includes(selected)) {
-        this.profile.languages.push(selected);
-        this.profile.languages.sort();
+    selectedLanguage(value) {
+      if (this.profile.languages !== undefined) {
+        if (!this.profile.languages.includes(value)) {
+          this.profile.languages.push(value);
+        }
       }
     },
+    add() {
+      this.$emit('add');
+    },
+    remove() {
+      // eslint-disable-next-line no-console
+      console.log(this.profile);
+      this.$emit('remove');
+    },
   },
-  removesSkill() {
-    alert('Fuck');
-  },
+
 };
 </script>
 
