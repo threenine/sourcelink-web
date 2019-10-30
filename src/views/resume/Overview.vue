@@ -71,7 +71,9 @@ export default {
 
       this.$router.push({ name: 'download' });
     },
-    addLanguage() {
+    addLanguage(lang) {
+      if (this.profile.languages === undefined) this.profile.languages = [];
+      this.profile.languages.push(lang);
       this.saveProfile();
     },
     removeLanguage() {

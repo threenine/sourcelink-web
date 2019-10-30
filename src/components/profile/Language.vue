@@ -61,6 +61,7 @@ export default {
   data() {
     return {
       languages: [],
+      language: '',
     };
   },
   async mounted() {
@@ -76,14 +77,13 @@ export default {
   },
   methods: {
     selectedLanguage(value) {
-      if (this.profile.languages !== undefined) {
-        if (!this.profile.languages.includes(value)) {
-          this.profile.languages.push(value);
-        }
-      }
+      this.language = value;
     },
     add() {
-      this.$emit('add');
+      if ((this.language !== undefined) && (this.language !== '')) {
+        this.$emit('add', this.language);
+        this.language = '';
+      }
     },
     remove() {
       // eslint-disable-next-line no-console
