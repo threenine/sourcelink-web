@@ -9,7 +9,7 @@
                     v-on:getValue="selectedLanguage"/>
       </mdb-col>
       <mdb-col md="4" xl="1" >
-        <mdb-btn @click="add" floating  gradient="green" tag="a" size="sm" >
+        <mdb-btn v-on:click="add" floating  gradient="green" tag="a" size="sm" >
           <mdb-icon icon="plus"></mdb-icon>
         </mdb-btn>
 
@@ -21,13 +21,14 @@
                   v-bind:key="language"
                   v-bind:title="language"
                   tag="a"
-                  color="green lighten-2" text="white" close @closeChip="remove"
+                  color="green lighten-2" text="white" close v-on:closeChip="remove"
         >{{ language }}</mdb-chip>
       </mdb-col>
     </mdb-row>
     </section>
   </mdb-container>
 </template>
+
 
 <script>
 

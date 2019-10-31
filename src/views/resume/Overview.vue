@@ -68,9 +68,7 @@ export default {
   methods: {
     savePersonal(event) {
       event.target.classList.add('was-validated');
-
       this.saveProfile();
-
       this.$router.push({ name: 'download' });
     },
     addLanguage(lang) {
@@ -87,7 +85,6 @@ export default {
         .doc(Auth.currentUser.uid)
         .onSnapshot((doc) => {
           if (doc.exists) {
-            f;
             doc.ref.update(this.profile);
           }
         });
