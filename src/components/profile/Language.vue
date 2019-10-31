@@ -86,7 +86,10 @@ export default {
       }
     },
     remove(chip) {
-      this.$emit('remove', chip);
+      if (chip !== undefined) {
+        this.$emit('remove', chip);
+      }
+
     },
   },
 
