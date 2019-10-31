@@ -6,7 +6,9 @@
           <profile :profile="profile"></profile>
         </mdb-col>
         <mdb-col  md="6" xl="4" class="mt-5">
-          <language :profile="profile" @add="addLanguage" @remove="removeLanguage"></language>
+          <language :skills="profile.languages"
+                    v-on:add="addLanguage"
+                    v-on:remove="removeLanguage"></language>
         </mdb-col>
       </mdb-row>
 
@@ -85,6 +87,7 @@ export default {
         .doc(Auth.currentUser.uid)
         .onSnapshot((doc) => {
           if (doc.exists) {
+            f;
             doc.ref.update(this.profile);
           }
         });

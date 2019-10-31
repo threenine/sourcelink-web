@@ -58,6 +58,8 @@ import {
   mdbPopover,
 }
   from 'mdbvue';
+// https://mdbootstrap.com/docs/vue/advanced/popovers?utm_ref_id=47167
+
 
 export default {
   name: 'Profile',

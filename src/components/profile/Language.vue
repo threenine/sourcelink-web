@@ -17,7 +17,7 @@
     </mdb-row>
     <mdb-row>
       <mdb-col md="12" xl="12">
-        <mdb-chip v-for="language in profile.languages" pill size="md"
+        <mdb-chip v-for="language in skills" pill size="md"
                   v-bind:key="language"
                   v-bind:title="language"
                   tag="a"
@@ -47,8 +47,8 @@ import { GET_LANGUAGES_QUERY } from '@/graphql/queries/skillQueries';
 export default {
   name: 'Language',
   props: {
-    profile: {
-      type: Object,
+    skills: {
+      type: Array,
     },
   },
   components: {
@@ -89,7 +89,6 @@ export default {
       if (chip !== undefined) {
         this.$emit('remove', chip);
       }
-
     },
   },
 
