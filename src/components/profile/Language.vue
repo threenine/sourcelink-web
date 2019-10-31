@@ -17,9 +17,11 @@
     </mdb-row>
     <mdb-row>
       <mdb-col md="12" xl="12">
-        <mdb-chip v-for="language in profile.languages"
+        <mdb-chip v-for="language in profile.languages" pill size="md"
                   v-bind:key="language"
-                  color="green lighten-2" text="white" close :handle-close="remove"
+                  v-bind:title="language"
+                  tag="a"
+                  color="green lighten-2" text="white" close @closeChip="remove"
         >{{ language }}</mdb-chip>
       </mdb-col>
     </mdb-row>
@@ -71,8 +73,6 @@ export default {
           this.languages.push({ text: language.name, value: language.name });
         });
       });
-
-
     this.languages.sort();
   },
   methods: {
@@ -85,10 +85,8 @@ export default {
         this.language = '';
       }
     },
-    remove() {
-      // eslint-disable-next-line no-console
-      console.log(this.profile);
-      this.$emit('remove');
+    remove(chip) {
+      this.$emit('remove', chip);
     },
   },
 

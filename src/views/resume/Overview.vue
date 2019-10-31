@@ -76,16 +76,9 @@ export default {
       this.profile.languages.push(lang);
       this.saveProfile();
     },
-    removeLanguage() {
-      console.dir(this.profile);
-      DB.collection('users')
-        .doc(Auth.currentUser.uid)
-        .onSnapshot((doc) => {
-          if (doc.exists) {
-            doc.ref.update(this.profile);
-          }
-        });
-      console.log('removed');
+    removeLanguage(chip) {
+      this.profile.languages.pop(chip);
+      this.saveProfile();
     },
     saveProfile() {
       DB.collection('users')
