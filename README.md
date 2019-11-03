@@ -48,9 +48,9 @@ enables developers create great looking web & mobile applications really quickly
 
 For more information checkout [How to use a Material Design Component Framework with Vue](https://garywoodfine.com/material-component-framework-vue/)
 
-
-[Buy MDB Vue Pro](https://mdbootstrap.com/products/vue-ui-kit/?utm_ref_id=47167)
+[![Buy MDB Vue Pro](https://threenine.co.uk/wp-content/uploads/2019/11/mdb-vue.jpg)](https://mdbootstrap.com/products/vue-ui-kit/?utm_ref_id=47167)
  
+
  ### Initial NPM Install
  
 The initial workaround for this I was exploring how to use PreInstall and PostInstall tasks to inject the license code
