@@ -7,3 +7,10 @@ export const GET_LANGUAGES_QUERY = gql`
     name
   }  
 }`;
+
+export const GET_FRAMEWORKS_QUERY = gql`
+ query getFrameworks {
+  frameworks( where: { Active: true } ) {
+    Name
+  }  
+}`;

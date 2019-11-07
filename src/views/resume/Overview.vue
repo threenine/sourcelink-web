@@ -9,6 +9,9 @@
           <language :skills="profile.languages"
                     v-on:add="addLanguage"
                     v-on:remove="removeLanguage"></language>
+          <framework :skills="profile.frameworks"
+                     v-on:add="addFramework"
+                     v-on:remove="removeFramework"></framework>
         </mdb-col>
       </mdb-row>
 
@@ -33,6 +36,7 @@ import {
   mdbBtn,
 }
   from 'mdbvue';
+import Framework from '@/components/profile/Framework.vue';
 import Profile from '@/components/profile/Profile.vue';
 import Language from '@/components/profile/Language.vue';
 import { Auth } from '@/firebase/auth';
@@ -43,6 +47,7 @@ export default {
   components: {
     Profile,
     Language,
+    Framework,
     mdbContainer,
     mdbRow,
     mdbCol,
@@ -76,8 +81,17 @@ export default {
       this.profile.languages.push(lang);
       this.saveProfile();
     },
+    addFramework(framework) {
+      if (this.profile.frameworks === undefined) this.profile.frameworks = [];
+      this.profile.frameworks.push(framework);
+      this.saveProfile();
+    },
     removeLanguage(chip) {
       this.profile.languages.pop(chip);
+      this.saveProfile();
+    },
+    removeFramework(chip) {
+      this.profile.frameworks.pop(chip);
       this.saveProfile();
     },
     saveProfile() {
