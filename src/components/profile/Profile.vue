@@ -5,7 +5,7 @@
       <mdb-input type="text" label="Tag line" v-model="profile.tagline"></mdb-input>
     </mdb-col>
     <mdb-col >
-      <mdb-popover trigger="hover" :options="{ placement: 'left'}">
+      <mdb-popover trigger="hover" :options="{ placement: 'left'}" class="raise">
         <span slot="header" class="info-popover">Tag Line</span>
         <span slot="body"><p>Try to define your <em>Value Proposition</em>
                     succinctly as possible.</p>
@@ -81,5 +81,10 @@ export default {
 </script>
 
 <style scoped>
-
+  .raise{
+    z-index: 10000;
+  }
+ textarea {
+   overflow: scroll;
+ }
 </style>

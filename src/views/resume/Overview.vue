@@ -1,17 +1,25 @@
 <template>
   <mdb-container>
-    <section class="mt-5">
-      <mdb-row>
+    <section >
+      <mdb-row class="my-5">
         <mdb-col md="6" xl="8" class="mt-4">
           <profile :profile="profile"></profile>
         </mdb-col>
         <mdb-col  md="6" xl="4" class="mt-5">
-          <language :skills="profile.languages"
-                    v-on:add="addLanguage"
-                    v-on:remove="removeLanguage"></language>
-          <framework :skills="profile.frameworks"
-                     v-on:add="addFramework"
-                     v-on:remove="removeFramework"></framework>
+          <mdb-row class="my-1">
+            <mdb-col> <language :skills="profile.languages"
+                                v-on:add="addLanguage"
+                                v-on:remove="removeLanguage"></language></mdb-col>
+          </mdb-row>
+         <mdb-row class="my-5">
+           <mdb-col>
+             <framework :skills="profile.frameworks"
+                        v-on:add="addFramework"
+                        v-on:remove="removeFramework"></framework>
+
+           </mdb-col>
+         </mdb-row>
+
         </mdb-col>
       </mdb-row>
 
@@ -87,11 +95,18 @@ export default {
       this.saveProfile();
     },
     removeLanguage(chip) {
-      this.profile.languages.pop(chip);
+      const index = this.profile.languages.indexOf(chip);
+      if (index > -1) {
+        this.profile.languages.splice(index, 1);
+      }
+
       this.saveProfile();
     },
     removeFramework(chip) {
-      this.profile.frameworks.pop(chip);
+      const index = this.profile.frameworks.indexOf(chip);
+      if (index > -1) {
+        this.profile.frameworks.splice(index, 1);
+      }
       this.saveProfile();
     },
     saveProfile() {
