@@ -19,7 +19,7 @@
         "apollo-link-http": "^1.5.16",
         "bootstrap-css-only": "^4.3.1",
         "core-js": "^2.6.10",
-        "firebase": "^7.2.2",
+        "firebase": "^7.3.0",
         "graphql": "^14.5.8",
         "graphql-tag": "^2.10.1",
         "mdbvue": "git+https://oauth2:{MDB_VUE_PRO_ID}@git.mdbootstrap.com/mdb/vue/vu-pro.git",
