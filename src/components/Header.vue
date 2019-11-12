@@ -7,7 +7,7 @@
 
   >
     <mdb-navbar-brand href="https://sourcelink.co.uk" style="padding-left: 150px" target="_blank">
-      <img alt="SourceLink" class="img-fluid" height="60" src="../../public/img/logo.png"/>
+      <img alt="SourceLink" class="img-fluid" height="30" src="../../public/img/logo.png"/>
     </mdb-navbar-brand>
 
     <mdb-navbar-nav class="nav-flex-icons" right>
