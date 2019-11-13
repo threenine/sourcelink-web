@@ -3,6 +3,7 @@
               color="orange"
               expand="large"
               position="top"
+              :toggler="false"
               scrolling
 
   >

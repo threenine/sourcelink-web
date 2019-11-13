@@ -1,12 +1,17 @@
 <template>
-  <div class="flexible-content">
+  <div class="flexible-content"  :style="flexibleContentStyle">
     <Header></Header>
+    <div>
     <side-navigation></side-navigation>
-    <main>
+    </div>
+    <div :style="contentStyle" class="page-content">
+
       <router-view></router-view>
-    </main>
+
+    </div>
     <Footer></Footer>
   </div>
+
 </template>
 <script>
 import Header from '@/components/Header.vue';
@@ -21,6 +26,26 @@ export default {
     SideNavigation,
     Footer,
 
+  },
+  data() {
+    return {
+      toggle: false,
+      wide: true,
+      collapse: true,
+      flexibleContentStyle: false,
+    };
+  },
+  computed: {
+    contentStyle() {
+      return `height: 100vh; margin-bottom: -25px; margin-left: ${this.collapse ? 60 : 240}px`;
+    },
+
+  },
+  methods: {
+    toggleCollapse() {
+      this.collapse = !this.collapse;
+      this.handleResize();
+    },
   },
 };
 
