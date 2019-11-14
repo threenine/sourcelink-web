@@ -9,7 +9,7 @@ import Overview from '@/views/resume/Overview.vue';
 import { Auth } from '@/firebase/auth';
 import Download from '@/views/resume/Download.vue';
 import Education from '@/views/resume/Education.vue';
-import Project from '@/views/resume/Project.vue';
+import Positions from '@/views/resume/Positions.vue';
 
 
 Vue.use(Router);
@@ -66,9 +66,9 @@ const router = new Router({
       },
     },
     {
-      path: '/resume/project',
-      name: 'project',
-      component: Project,
+      path: '/resume/positions',
+      name: 'positions',
+      component: Positions,
       meta: {
         requiresAuth: true,
       },

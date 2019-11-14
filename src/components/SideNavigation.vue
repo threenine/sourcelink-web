@@ -10,6 +10,8 @@
         <mdb-side-nav-cat far icon="address-card" name="Profile">
           <mdb-side-nav-item :to="{ name: 'overview' }" icon="user-circle">Overview
           </mdb-side-nav-item>
+          <mdb-side-nav-item :to="{ name: 'positions' }" icon="user-circle">Positions
+          </mdb-side-nav-item>
           <mdb-side-nav-item :to="{ name: 'download' }" icon="file-download" > Download
           </mdb-side-nav-item>
          </mdb-side-nav-cat>
